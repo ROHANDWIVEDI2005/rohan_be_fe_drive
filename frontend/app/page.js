@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styles from './page.module.css';
 import MessageItem from '../components/MessageItem';
-import MessageForm from '../components/MessageForm'; // <-- Import the new component
+import MessageForm from '../components/MessageForm'; /
 
 const API_BASE_URL = 'http://localhost:3001/api';
 
@@ -36,7 +36,7 @@ export default function Home() {
     }
   }, []); // Empty dependency array: function is created once
 
-  // --- Initial Fetch Effect ---
+
   useEffect(() => {
     fetchMessages();
   }, [fetchMessages]); 
@@ -78,12 +78,12 @@ export default function Home() {
    
   };
 
-  // --- TODO: Implement handleSendMessage function later ---
+
   const handleSendMessage = async (id) => {
     console.log(`Frontend: Attempting to send message ID ${id}...`);
     // Clear previous list errors before trying to send
     setListError(null);
-    // Optional: Set a specific 'isSending' state for the specific item if needed
+    
   
     try {
       const response = await fetch(`${API_BASE_URL}/messages/${id}/send`, {
@@ -101,15 +101,14 @@ export default function Home() {
       const updatedMessage = await response.json();
       console.log("Frontend: Message send simulated successfully, updated data:", updatedMessage);
   
-      // --- Update the state ---
-      // Find the message in the current state and update its sentCount
-      // and isExpired status (in case the backend recalculates it)
+    
+     
       setMessages(currentMessages =>
         currentMessages.map(msg =>
           msg.id === id ? updatedMessage : msg // Replace the old message with the one from the API response
         )
       );
-      // Return true or the updated message if needed elsewhere
+      
       return true;
   
     } catch (err) {
