@@ -1,4 +1,4 @@
-# Promo Message Tool - Take-Home Assignment
+# Promo Message Tool
 
 ## Objective
 
