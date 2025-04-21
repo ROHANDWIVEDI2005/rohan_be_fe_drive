@@ -1,4 +1,4 @@
-/* frontend/components/MessageForm.module.css */
+
 .form {
     padding: 20px;
     border: 1px solid #ddd;
@@ -32,7 +32,7 @@
     padding: 8px 10px;
     border: 1px solid #171616;
     border-radius: 4px;
-    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    box-sizing: border-box; 
     font-size: 0.95em;
   }
   
@@ -45,7 +45,7 @@
     padding: 10px 15px;
     font-size: 1em;
     cursor: pointer;
-    background-color: #28a745; /* Green */
+    background-color: #28a745; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -62,7 +62,7 @@
   }
   
   .error {
-      color: #dc3545; /* Red */
+      color: #dc3545;
       font-size: 0.9em;
       margin-bottom: 10px;
       border: 1px solid #dc3545;
