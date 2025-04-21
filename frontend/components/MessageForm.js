@@ -1,21 +1,20 @@
-// frontend/components/MessageForm.js
+
 'use client'; // Needed for useState and event handlers
 
 import React, { useState } from 'react';
-import styles from './MessageForm.module.css'; // We'll create this CSS Module
+import styles from './MessageForm.module.css'; 
 
-// This component receives an 'onCreate' function as a prop
 function MessageForm({ onCreate }) {
-  // State for each input field
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
 
-  // State for managing submission status and errors within the form
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(''); // Form-specific error message
 
-  // Handle form submission
+
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent the default browser page reload
     setError(''); // Clear previous form errors
