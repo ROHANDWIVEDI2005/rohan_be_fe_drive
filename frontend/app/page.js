@@ -1,7 +1,7 @@
-// frontend/app/page.js
+
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react'; // Added useCallback
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './page.module.css';
 import MessageItem from '../components/MessageItem';
 import MessageForm from '../components/MessageForm'; // <-- Import the new component
@@ -11,12 +11,9 @@ const API_BASE_URL = 'http://localhost:3001/api';
 export default function Home() {
   const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // Rename error state to be more specific, e.g., listError
   const [listError, setListError] = useState(null);
 
-  // --- Fetch Messages Function (Using useCallback) ---
-  // Wrap fetchMessages in useCallback to ensure it has a stable identity
-  // unless its dependencies change (which are none here).
+  
   const fetchMessages = useCallback(async () => {
     console.log("Frontend: Fetching messages...");
     setIsLoading(true);
@@ -42,14 +39,14 @@ export default function Home() {
   // --- Initial Fetch Effect ---
   useEffect(() => {
     fetchMessages();
-  }, [fetchMessages]); // Depend on the stable fetchMessages function
-
+  }, [fetchMessages]); 
+  
   // --- Handle Message Creation (Function to pass to MessageForm) ---
   const handleCreateMessage = async (newMessageData) => {
     console.log("Frontend: Attempting to create message...", newMessageData);
     // Clear previous list errors before trying to create
     setListError(null);
-    // Optionally set a specific 'isCreating' state if needed for global UI feedback
+  
 
     try {
       const response = await fetch(`${API_BASE_URL}/messages`, {
@@ -61,12 +58,12 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        // Try to get error details from backend response body
+      
         const errorData = await response.json().catch(() => ({ error: `HTTP error! status: ${response.status}` }));
         throw new Error(errorData.error || `Failed to create message.`);
       }
 
-      // Success!
+     
       console.log("Frontend: Message created successfully via API.");
       // Refresh the list to show the new message
       await fetchMessages(); // Re-fetch the entire list
@@ -74,11 +71,11 @@ export default function Home() {
 
     } catch (err) {
       console.error("Frontend: Error creating message:", err);
-      // Set the list error state to display the error near the list/form
+      /
       setListError(`Error creating message: ${err.message}`);
       return false; // Indicate failure to the MessageForm
     }
-    // Optionally reset 'isCreating' state here if used
+   
   };
 
   // --- TODO: Implement handleSendMessage function later ---
