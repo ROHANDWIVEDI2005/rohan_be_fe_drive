@@ -1,0 +1,71 @@
+/* frontend/components/MessageItem.module.css */
+.item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.2s ease-in-out;
+    border-left-width: 5px; /* Make space for the status indicator */
+    border-left-style: solid;
+  }
+  
+  .item:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .active {
+      border-left-color: #4caf50; /* Green for active */
+  }
+  
+  .expired {
+      border-left-color: #f44336; /* Red for expired */
+      background-color: #f5f5f5; /* Slightly greyed out background */
+      opacity: 0.8; /* Slightly faded */
+  }
+  
+  .title {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.15em;
+    color: #333;
+  }
+  
+  .description {
+    margin-bottom: 12px;
+    color: #555;
+    font-size: 0.95em;
+  }
+  
+  .meta {
+    font-size: 0.85em;
+    color: #777;
+    display: flex;
+    gap: 15px; /* Space out meta items */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    margin-bottom: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #eee; /* Separator line */
+  }
+  
+  .sendButton {
+    padding: 6px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+    background-color: #0070f3; /* Next.js blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .sendButton:hover:not(:disabled) {
+    background-color: #005bb5;
+  }
+  
+  .sendButton:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+    opacity: 0.7;
+  }

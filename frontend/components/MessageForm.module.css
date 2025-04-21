@@ -1,0 +1,72 @@
+/* frontend/components/MessageForm.module.css */
+.form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    background-color: #3b3232;
+  }
+  
+  .form h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #2e2e2e;
+    padding-bottom: 10px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .formGroup input[type="text"],
+  .formGroup input[type="date"],
+  .formGroup textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #171616;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
+    font-size: 0.95em;
+  }
+  
+  .formGroup textarea {
+      min-height: 80px;
+      resize: vertical;
+  }
+  
+  .submitButton {
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submitButton:hover:not(:disabled) {
+    background-color: #218838;
+  }
+  
+  .submitButton:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+  }
+  
+  .error {
+      color: #dc3545; /* Red */
+      font-size: 0.9em;
+      margin-bottom: 10px;
+      border: 1px solid #dc3545;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #f8d7da;
+  }
